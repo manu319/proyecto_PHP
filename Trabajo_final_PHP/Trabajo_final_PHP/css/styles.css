@@ -1,0 +1,328 @@
+/* Estilos generales del sitio */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; /* Color de texto por defecto */
+}
+
+/* Estilos del header */
+header {
+    background-image: linear-gradient(green, blue); 
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 10px 20px; /* Relleno para el header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;  /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: center;  /* Centra los elementos en la barra */
+}
+
+.nav-bar ul {
+    list-style: none;  /* Eliminar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex;     /* Usar flexbox para alinear los elementos */
+    flex-wrap: wrap;   /* Permite que los elementos dentro de la lista se envuelvan en filas */
+    justify-content: center; /* Centra los elementos dentro de cada fila */
+}
+
+.nav-bar li {
+    margin: 10px; /* Espaciado entre los enlaces */
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.nav-bar a:hover {
+    background-color: #575757; /* Efecto hover */
+}
+
+/* Agregar estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .nav-bar ul {
+        flex-direction: column; /* En pantallas pequeñas, cambia a disposición vertical */
+    }
+
+    .nav-bar li {
+        margin: 10px 0; /* Ajusta el margen entre los elementos en dispositivos pequeños */
+    }
+}
+
+.noticias {
+    width: 100%;
+    margin: auto;
+}
+
+/* Estilo para las imágenes dentro del contenido */
+.noticia-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para las imágenes */
+}
+
+/* Contenido principal */
+main {
+    margin-left: 30px; /* Para que el contenido no se oculte detrás de la barra lateral */
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease; /* Transición para el contenido */
+    box-sizing: border-box;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para el footer */
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para formularios */
+form {
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    font-size: 16px;
+}
+
+/* Mejorar textarea */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botones de formularios */
+input[type="submit"], button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para mensajes de éxito o error */
+.success, .error {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .nav-bar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        width: 100%;
+        position: static;
+        padding-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    .nav-bar a {
+        padding: 10px 12px;
+    }
+}
+
+/* Estilo para el contenedor de todas las noticias */
+/* Contenedor de noticias */
+.contenedor-noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las noticias */
+    padding: 20px;
+}
+
+/* Estilo para la caja de cada noticia */
+.noticia-caja {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la imagen de la noticia */
+.noticia-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Estilo para el título de la noticia */
+.noticia-titulo {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Estilo para el texto de la noticia */
+.noticia-texto {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilo para la fecha de la noticia */
+.noticia-fecha {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-noticias {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-noticias {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}
+/* Estilos generales para la página */
+
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilos para la tabla de citas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* estilos contenido del main en el index */
+
+.contenido{
+    width: 60%;
+    margin: 50px auto;
+    background-color: lightgreen;
+}
+
+.redes_sociales{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.top-venta{
+    display: grid;
+}
